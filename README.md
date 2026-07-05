@@ -14,9 +14,9 @@ In this project, I performed an **Exploratory Data Analysis (EDA)** using **Micr
 
 ## Quick Links
 
-- 📄 **Excel Workbook:** `loan-risk-analysis.xlsx`
-- 📊 **Analysis Preview:** `analysis-preview.png`
-- 📁 **Dataset Source:** Lending Club Loan Dataset (Kaggle)
+- 📄 [Excel Workbook](loan-risk-analysis.xlsx)
+- 📊 [Analysis Preview](analysis-preview.png)
+- 📁 [Lending Club Loan Dataset](https://www.kaggle.com/datasets/utkarshx27/lending-club-loan-dataset)
 
 ---
 
