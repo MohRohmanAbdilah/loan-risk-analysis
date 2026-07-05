@@ -2,7 +2,9 @@
 
 ## Project Background
 
-Proyek ini bertujuan untuk menganalisis profil borrower guna mengidentifikasi karakteristik peminjam yang memiliki risiko gagal bayar (default) paling tinggi. Analisis dilakukan menggunakan Microsoft Excel dengan pendekatan Exploratory Data Analysis (EDA) untuk menghasilkan insight yang dapat mendukung proses penilaian kredit.
+Credit risk assessment plays an important role in lending decisions. Understanding borrower characteristics can help financial institutions identify high-risk applicants and reduce potential loan defaults.
+
+In this project, I performed an **Exploratory Data Analysis (EDA)** using **Microsoft Excel** to analyze the relationship between borrower financial characteristics and loan status, with the goal of identifying borrower profiles that have the highest probability of default.
 
 **Business Problem**
 
@@ -10,11 +12,19 @@ Proyek ini bertujuan untuk menganalisis profil borrower guna mengidentifikasi ka
 
 ---
 
+## Quick Links
+
+- 📄 **Excel Workbook:** `loan-risk-analysis.xlsx`
+- 📊 **Analysis Preview:** `analysis-preview.png`
+- 📁 **Dataset Source:** Lending Club Loan Dataset (Kaggle)
+
+---
+
 ## Dataset Overview
 
-Dataset berisi data historis pinjaman, di mana setiap baris merepresentasikan satu borrower.
+The dataset is based on the **Lending Club Loan Dataset**, obtained from Kaggle. It contains approximately **10,000 loan records** and **55 variables**, where each row represents a single borrower.
 
-Variabel utama yang digunakan:
+This analysis focuses on the following variables:
 
 - Annual Income
 - Debt-to-Income Ratio (DTI)
@@ -22,7 +32,7 @@ Variabel utama yang digunakan:
 - Loan Amount
 - Loan Status
 
-Untuk mendukung analisis, dibuat beberapa kolom turunan:
+To support the analysis, several derived features were created:
 
 - Loan Risk (Good / Risky)
 - Income Segment
@@ -33,14 +43,14 @@ Untuk mendukung analisis, dibuat beberapa kolom turunan:
 
 ## Data Preparation
 
-Sebelum analisis dilakukan, dataset dibersihkan dengan menghapus:
+Before the analysis, the dataset was cleaned by:
 
-- Duplicate records
-- Blank rows
-- Invalid income values
-- Missing DTI values
+- Removing duplicate records
+- Removing blank rows
+- Removing invalid income values
+- Removing missing DTI values
 
-Seluruh data bermasalah memiliki proporsi kurang dari **1%** sehingga tidak memberikan pengaruh signifikan terhadap hasil analisis.
+Since all data quality issues accounted for **less than 1%** of the dataset, their impact on the analysis was minimal.
 
 ---
 
@@ -53,6 +63,17 @@ Seluruh data bermasalah memiliki proporsi kurang dari **1%** sehingga tidak memb
 
 ---
 
+## Business Questions
+
+This analysis aims to answer the following questions:
+
+- Are lower-income borrowers more likely to default?
+- Does a higher Debt-to-Income (DTI) ratio increase default risk?
+- Which credit grade has the highest default rate?
+- Are larger loan amounts associated with higher risk?
+
+---
+
 ## Analysis Preview
 
 ![Loan Portfolio Risk Analysis](analysis-preview.png)
@@ -61,24 +82,20 @@ Seluruh data bermasalah memiliki proporsi kurang dari **1%** sehingga tidak memb
 
 ## Key Findings
 
-- Hanya **1.78%** pinjaman yang termasuk kategori **Risky**, sedangkan **98.22%** lainnya berada pada kategori **Good**.
-- Borrower dengan **Low Income** memiliki tingkat risiko tertinggi dibandingkan kelompok income lainnya.
-- **Credit Grade** merupakan faktor yang paling berpengaruh terhadap risiko default, dengan **Grade F** memiliki risk rate tertinggi (**10.53%**).
-- Borrower dengan **Large Loan** menunjukkan tingkat risiko lebih tinggi dibandingkan pinjaman kecil maupun menengah.
-- **Debt-to-Income (DTI)** tidak menunjukkan hubungan yang konsisten terhadap risiko default pada dataset ini.
-- Kombinasi **Grade F + Low Income** merupakan profil borrower dengan risiko tertinggi (**12.50%**).
+- **98.22%** of loans were classified as **Good**, while **1.78%** were classified as **Risky**.
+- Borrowers in the **Low Income** segment had the highest default rate.
+- **Credit Grade** was the strongest indicator of loan risk, with **Grade F** showing the highest default rate (**10.53%**).
+- Borrowers with **Large Loans** had a higher default rate than those with small or medium loans.
+- **Debt-to-Income (DTI)** did not show a consistent relationship with default risk in this dataset.
+- The highest-risk borrower profile was **Grade F + Low Income**, with a default rate of **12.50%**.
 
 ---
 
 ## Recommendations
 
-- Perketat evaluasi kredit untuk borrower dengan **Credit Grade** rendah.
-- Terapkan penilaian tambahan pada pengajuan pinjaman dengan nominal besar.
-- Gunakan **Credit Grade** sebagai indikator utama dalam proses penilaian risiko.
-- Kembangkan model credit scoring yang menggabungkan grade, income, dan loan amount.
+Based on the analysis, the following actions are recommended:
 
----
-
-## Business Relevance
-
-Analisis ini relevan untuk berbagai institusi keuangan seperti **bank, pegadaian, fintech lending,** dan **perusahaan pembiayaan** sebagai dasar dalam meningkatkan kualitas keputusan pemberian pinjaman.
+- Apply stricter credit evaluations for borrowers with lower credit grades.
+- Perform additional assessments for large loan applications.
+- Use **Credit Grade** as the primary indicator during credit risk evaluation.
+- Consider combining **Credit Grade**, **Income**, and **Loan Amount** when developing a credit scoring model.
